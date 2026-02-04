@@ -1,114 +1,136 @@
-# API Gestión de Citas 🗓️
+# Appointment Management API
+[English version]
 
-API backend desarrollada en **Flask** para la gestión de citas de un consultorio o negocio de servicios.
-
-Permite crear y listar citas, almacenándolas en una base de datos SQLite.  
-Proyecto enfocado en buenas prácticas de backend y arquitectura REST.
-
----
-
-## 🚀 Tecnologías usadas
-
-- Python 3.11
-- Flask
-- Flask-SQLAlchemy
-- SQLite
-- Git & GitHub
+Backend API developed with **Flask (Python)** to manage appointments for a small business or service-based company.  
+This project was created as part of my portfolio to practice backend development and REST APIs.
 
 ---
 
-## 📂 Estructura del proyecto
+## 🚀 Features
+
+✔ Create appointments  
+✔ List registered appointments  
+✔ Store data using SQLite  
+✔ Organized architecture with Flask and SQLAlchemy  
+
+---
+
+## 🛠️ Technologies
+
+- Python 3.x  
+- Flask  
+- Flask-SQLAlchemy  
+- SQLite  
+- Git & GitHub  
+
+---
+
+## 📁 Project Structure
 
 api-gestion-citas/
-│
 ├── app/
 │ ├── init.py
 │ ├── db.py
 │ ├── routes.py
-│ ├── models/
-│ │ └── cita.py
-│
+│ └── models/
+│ └── cita.py
 ├── instance/
 │ └── citas.db
-│
 ├── run.py
 ├── requirements.txt
 └── README.md
 
-yaml
-Copy code
 
 ---
 
-## ⚙️ Instalación y ejecución
+## ⚙️ Installation & Run
 
-### 1️⃣ Clonar el repositorio
-
+1. Clone the repository
 ```bash
-git clone https://github.com/janfrednb/api-gestion-citas.git
+git clone https://github.com/Janfrednb/api-gestion-citas.git
 cd api-gestion-citas
-2️⃣ Crear entorno virtual
-bash
-Copy code
+Create virtual environment
+
 python -m venv venv
-3️⃣ Activar entorno virtual (Windows)
-bash
-Copy code
+Activate virtual environment
+
+Windows
+
 venv\Scripts\activate
-4️⃣ Instalar dependencias
-bash
-Copy code
+macOS / Linux
+
+source venv/bin/activate
+Install dependencies
+
 pip install -r requirements.txt
-5️⃣ Ejecutar el servidor
-bash
-Copy code
+Run the API
+
 python run.py
-Servidor disponible en:
-👉 http://127.0.0.1:5000
+API will be available at:
 
-🔗 Endpoints disponibles
-📌 GET /citas
-Lista todas las citas registradas.
+http://127.0.0.1:5000
+📲 Available Endpoints
+GET /citas
+List all appointments
 
-powershell
-Copy code
-Invoke-RestMethod http://127.0.0.1:5000/citas
-📌 POST /citas
-Crea una nueva cita.
+POST /citas
+Create a new appointment
 
-powershell
-Copy code
-Invoke-RestMethod -Uri http://127.0.0.1:5000/citas `
--Method POST `
--ContentType "application/json" `
--Body '{
+Example request body:
+
+{
   "cliente": "Juan Perez",
   "fecha": "2026-02-10",
   "hora": "09:00",
-  "observaciones": "Consulta general"
-}'
-🧠 Aprendizajes clave
-Arquitectura Flask con Application Factory
+  "observaciones": "General consultation"
+}
+🧠 What I practiced
+✔ Backend API development with Flask
+✔ Database modeling with SQLAlchemy
+✔ Project structure and organization
+✔ HTTP requests and responses
 
-Uso de SQLAlchemy ORM
+🚧 Future improvements
+Update and delete endpoints
 
-Separación de modelos y rutas
+Request validations
 
-Manejo de errores HTTP
+User authentication
 
-Control de versiones con Git y GitHub
+PostgreSQL support
 
-🔮 Próximas mejoras
-Validaciones avanzadas
-
-Endpoints PUT y DELETE
-
-Autenticación
-
-PostgreSQL
-
-Despliegue en la nube
-
-👤 Autor
+👤 Author
 Janfred Naranjo
-Desarrollador backend en formación
+Junior Backend Developer
+---
+
+[Contenido en español]
+
+API de Gestión de Citas
+
+API backend desarrollada en Flask (Python) para gestionar citas de un consultorio o negocio de servicios.
+Proyecto creado como parte de mi portafolio para practicar desarrollo backend y APIs REST.
+
+🚀 Funcionalidades
+
+✔ Crear citas
+✔ Listar citas registradas
+✔ Almacenamiento en SQLite
+✔ Arquitectura organizada con Flask y SQLAlchemy
+
+🧠 Aprendizajes
+
+✔ Desarrollo de APIs con Flask
+✔ Modelado de base de datos
+✔ Organización de proyectos backend
+✔ Manejo de peticiones HTTP
+
+🚧 Próximas mejoras
+
+Endpoints para actualizar y eliminar citas
+
+Validaciones
+
+Autenticación de usuarios
+
+Soporte para PostgreSQL
