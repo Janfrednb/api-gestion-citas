@@ -19,7 +19,7 @@ def listar_citas():
 # -------------------------
 @citas_bp.route("/citas", methods=["POST"])
 def crear_cita():
-    data = request.get_json()
+    data = request.get_json(silent=True)
 
     if not data:
         return jsonify({"error": "No se enviaron datos"}), 400
@@ -50,12 +50,12 @@ def crear_cita():
 # -------------------------
 @citas_bp.route("/citas/<int:id>", methods=["PUT"])
 def actualizar_cita(id):
-    cita = Cita.query.get(id)
+    cita = db.session.get(Cita, id)
 
     if not cita:
         return jsonify({"error": "Cita no encontrada"}), 404
 
-    data = request.get_json()
+    data = request.get_json(silent=True)
 
     if not data:
         return jsonify({"error": "No se enviaron datos"}), 400
@@ -69,3 +69,21 @@ def actualizar_cita(id):
     db.session.commit()
 
     return jsonify(cita.to_dict()), 200
+
+
+# -------------------------
+# DELETE - eliminar cita
+# -------------------------
+@citas_bp.route("/citas/<int:id>", methods=["DELETE"])
+def eliminar_cita(id):
+    cita = db.session.get(Cita, id)
+
+    if not cita:
+        return jsonify({"error": "Cita no encontrada"}), 404
+
+    db.session.delete(cita)
+    db.session.commit()
+
+    return jsonify({
+        "message": f"Cita con id {id} eliminada correctamente"
+    }), 200
