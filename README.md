@@ -4,6 +4,8 @@
 Full-stack project developed with **Flask (Python)** on the backend and **React** on the frontend to manage appointments for a small business or service-based company.
 This project was created as part of my portfolio to practice backend development, REST APIs, and frontend integration.
 
+![Dashboard screenshot](docs/dashboard-screenshot.png)
+
 ---
 
 ## 🚀 Features
